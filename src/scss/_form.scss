@@ -1,0 +1,19 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding-top: 32px;
+    padding-bottom: 48px;
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

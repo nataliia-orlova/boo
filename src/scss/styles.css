@@ -5,4 +5,22 @@ ul {
 .bi {
   color: white;
   scale: 1.3;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+.form__heading {
+  display: flex;
+  flex-direction: column;
+}
+.form__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }/*# sourceMappingURL=styles.css.map */
