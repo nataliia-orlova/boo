@@ -3,7 +3,7 @@ export default function Header() {
         <header>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3">
                 <div className="container">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="index.html" className="navbar-brand">
                         <span className="text-warning">PARROT</span> BOOKS
                     </a>
                     <button

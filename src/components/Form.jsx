@@ -25,7 +25,10 @@ export default function Form() {
                         Subscribe to get news and updates directly to your
                         mailbox
                     </h2>
-                    <p>This is a message about the subscription</p>
+                    <p>
+                        You will receive information about upcoming books,
+                        sales, and new blog articles.
+                    </p>
                 </div>
                 <div>
                     {!submittedEmail ? (
