@@ -7,18 +7,17 @@ import Form from './components/Form';
 import Footer from './components/Footer';
 
 function App() {
-    const [initialProducts, setInitialProducts] = useState([]);
-    let products = initialProducts;
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:3000/products');
+                const response = await fetch('http://localhost:3001/products');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                setInitialProducts(data);
+                setProducts(data);
             } catch (error) {
                 console.error('There was a problem fetching the data: ', error);
             }
@@ -27,17 +26,18 @@ function App() {
         fetchData();
     }, []);
 
-    const [sortedProducts, setSortedProducts] = useState(products);
+    const handleSelect = (selectedIndex) => {
+        const sortedProducts = [...products];
 
-    const handleSelect = (index) => {
-        let currentValueIndex = index;
-        if (currentValueIndex == 1) {
-            setSortedProducts(products.sort((a, b) => b.rating - a.rating));
-        } else if (currentValueIndex == 2) {
-            setSortedProducts(products.sort((a, b) => b.price - a.price));
-        } else if (currentValueIndex == 3) {
-            setSortedProducts(products.sort((a, b) => a.price - b.price));
+        if (selectedIndex === 1) {
+            sortedProducts.sort((a, b) => b.rating - a.rating);
+        } else if (selectedIndex === 2) {
+            sortedProducts.sort((a, b) => b.price - a.price);
+        } else if (selectedIndex === 3) {
+            sortedProducts.sort((a, b) => a.price - b.price);
         }
+
+        setProducts(sortedProducts);
     };
 
     return (

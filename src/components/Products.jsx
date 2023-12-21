@@ -8,7 +8,10 @@ export default function Products({ products }) {
                     <div className='card-body text-center d-flex flex-column'>
                         <img
                             className='img-fluid'
-                            src={product.img}
+                            src={
+                                process.env.PUBLIC_URL +
+                                `/assets/img/products/${product.img}`
+                            }
                             alt={product.title}
                         />
                         <hgroup className='py-2'>
