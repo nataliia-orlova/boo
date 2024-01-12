@@ -1,10 +1,9 @@
 import './scss/styles.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
 import { useState, useEffect } from 'react';
-
-import Header from './components/Header';
-import ProductsList from './components/ProductsList';
-import Form from './components/Form';
-import Footer from './components/Footer';
 
 function App() {
     const [products, setProducts] = useState([]);
@@ -42,10 +41,21 @@ function App() {
 
     return (
         <>
-            <Header />
-            <ProductsList products={products} handleSelect={handleSelect} />
-            <Form />
-            <Footer />
+            <Router>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route
+                        path='/products'
+                        element={
+                            <Products
+                                products={products}
+                                handleSelect={handleSelect}
+                            />
+                        }
+                    />
+                    <Route path='/cart' element={<Cart />} />
+                </Routes>
+            </Router>
         </>
     );
 }

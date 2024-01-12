@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Sort({ products, handleSelect }) {
     return (
         <div className='product-list__sort'>

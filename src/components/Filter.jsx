@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Filter() {
     return (
         <div className='product-list__filter'>
@@ -219,21 +217,13 @@ export default function Filter() {
                                 <div className='filter__price--min'>
                                     <div className='filter__price--range'>
                                         <span>from</span>
-                                        <input
-                                            type='number'
-                                            min='0'
-                                            step='50'
-                                        />
+                                        <input type='number' min='0' step='5' />
                                     </div>
                                 </div>
                                 <div className='filter__price--max'>
                                     <div className='filter__price--range'>
                                         <span>to</span>
-                                        <input
-                                            type='number'
-                                            min='0'
-                                            step='50'
-                                        />
+                                        <input type='number' min='0' step='5' />
                                     </div>
                                 </div>
                             </div>

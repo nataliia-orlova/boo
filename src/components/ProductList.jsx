@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Products({ products }) {
+export default function ProductList({ products }) {
     return (
         <div className='product-list__gallery row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
             {products.map((product) => (
