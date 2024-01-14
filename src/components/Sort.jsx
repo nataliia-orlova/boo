@@ -2,7 +2,6 @@ export default function Sort({ products, handleSelect }) {
     return (
         <div className='product-list__sort'>
             <label htmlFor='select'>Sort by</label>
-
             <select
                 value={products}
                 onChange={(e) => handleSelect(e.target.selectedIndex)}

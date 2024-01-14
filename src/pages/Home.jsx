@@ -13,9 +13,9 @@ function Home() {
                     <div className='d-md-flex justify-content-around align-items-center'>
                         <div>
                             <h1>
-                                Explore the
+                                Explore the {''}
                                 <span className='text-warning'>
-                                    amazing world
+                                    amazing world {''}
                                 </span>
                                 of books
                             </h1>

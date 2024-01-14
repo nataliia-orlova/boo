@@ -1,19 +1,30 @@
 .form {
+    padding-top: 24px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 48px;
 
     &__heading {
         display: flex;
         flex-direction: column;
+        padding-bottom: 24px;
     }
 
     &__body {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+    }
+
+    label {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    input {
+        margin-bottom: 12px;
+        margin-right: 8px;
     }
 }

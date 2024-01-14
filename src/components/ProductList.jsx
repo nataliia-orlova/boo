@@ -1,6 +1,16 @@
-import React from 'react';
+import { addToCart } from '../slices/cartSlice';
+import { useDispatch } from 'react-redux';
 
-export default function ProductList({ products }) {
+function ProductList({ products }) {
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (product) => {
+        dispatch(addToCart(product));
+    };
+
+    // const addToCartHandler = () => {
+    //     dispatch(addToCart({ ...product }));
+    // };
     return (
         <div className='product-list__gallery row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
             {products.map((product) => (
@@ -29,6 +39,7 @@ export default function ProductList({ products }) {
                                 Read more
                             </button>
                             <button
+                                onClick={() => handleAddToCart(product)}
                                 className='btn btn-add-to-cart btn-warning w-100'
                                 type='button'
                                 data-id='{product.id}'
@@ -42,3 +53,5 @@ export default function ProductList({ products }) {
         </div>
     );
 }
+
+export default ProductList;

@@ -6,6 +6,10 @@
 
     &__sort {
         padding-bottom: 18px;
+
+        label {
+            margin-right: 8px;
+        }
     }
 }
 
@@ -13,6 +17,7 @@
     background-color: white;
     padding: 20px;
     border-radius: 16px;
+    min-width: 200px;
 
     &__content {
         display: flex;

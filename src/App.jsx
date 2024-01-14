@@ -6,7 +6,9 @@ import Cart from './pages/Cart';
 import { useState, useEffect } from 'react';
 
 function App() {
+    const [initialProducts, setInitialProducts] = useState([]);
     const [products, setProducts] = useState([]);
+    const [activeFilters, setActiveFilters] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,6 +18,7 @@ function App() {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+                setInitialProducts(data);
                 setProducts(data);
             } catch (error) {
                 console.error('There was a problem fetching the data: ', error);
@@ -39,6 +42,29 @@ function App() {
         setProducts(sortedProducts);
     };
 
+    const handleFilter = (value) => {
+        let currentFilters = [...activeFilters];
+
+        if (currentFilters.includes(value)) {
+            let currentValueIndex = currentFilters.indexOf(value);
+            currentFilters.splice(currentValueIndex, 1);
+        } else {
+            currentFilters.push(value);
+        }
+
+        setActiveFilters(currentFilters);
+
+        const allProducts = [...initialProducts];
+
+        const filteredProducts = allProducts.filter((product) =>
+            Object.values(product).some((value) =>
+                currentFilters.includes(value)
+            )
+        );
+
+        setProducts(currentFilters.length ? filteredProducts : allProducts);
+    };
+
     return (
         <>
             <Router>
@@ -50,6 +76,7 @@ function App() {
                             <Products
                                 products={products}
                                 handleSelect={handleSelect}
+                                handleFilter={handleFilter}
                             />
                         }
                     />
