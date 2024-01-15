@@ -2,6 +2,7 @@ import './scss/styles.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Products from './pages/Products';
+import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import { useState, useEffect } from 'react';
 
@@ -79,6 +80,10 @@ function App() {
                                 handleFilter={handleFilter}
                             />
                         }
+                    />
+                    <Route
+                        path='/products/:productId'
+                        element={<ProductDetails products={products} />}
                     />
                     <Route path='/cart' element={<Cart />} />
                 </Routes>

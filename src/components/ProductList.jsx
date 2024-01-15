@@ -1,5 +1,6 @@
 import { addToCart } from '../slices/cartSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function ProductList({ products }) {
     const dispatch = useDispatch();
@@ -32,12 +33,10 @@ function ProductList({ products }) {
                             </span>
                         </hgroup>
                         <div className='d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1'>
-                            <button
-                                className='btn btn-read-more btn-primary me-md-2 w-100'
-                                type='button'
-                            >
-                                Read more
-                            </button>
+                            <Link to={`/products/${product.id}`}>
+                                Read More
+                            </Link>
+
                             <button
                                 onClick={() => handleAddToCart(product)}
                                 className='btn btn-add-to-cart btn-warning w-100'

@@ -1,10 +1,10 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ClickCounter from '../components/ClickCounter';
 import { useSelector } from 'react-redux';
 import { removeFromCart } from '../slices/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 function Cart() {
     const cart = useSelector((state) => state.cart.items);
@@ -13,14 +13,6 @@ function Cart() {
     const handleRemoveFromCart = (product) => {
         dispatch(removeFromCart(product));
     };
-
-    const [count, setCount] = useState(0);
-    function decrement() {
-        setCount(count - 1);
-    }
-    function increment() {
-        setCount(count + 1);
-    }
 
     return (
         <>
@@ -64,23 +56,7 @@ function Cart() {
                                     </div>
 
                                     <div className='cart__item-actions'>
-                                        <div className='cart__item-qty'>
-                                            <button
-                                                className='cart__btn--decrement btn btn-warning'
-                                                onClick={decrement}
-                                            >
-                                                -
-                                            </button>
-                                            <span className='cart__item-qty-display'>
-                                                {count > 0 ? count : '1'}
-                                            </span>
-                                            <button
-                                                className='cart__btn--increment btn btn-primary'
-                                                onClick={increment}
-                                            >
-                                                +
-                                            </button>
-                                        </div>
+                                        <ClickCounter />
                                         <button
                                             className='cart__btn--remove btn btn-danger'
                                             onClick={() =>
