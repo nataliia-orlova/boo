@@ -65,6 +65,16 @@ function ProductDetails({ products }) {
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>
+                                <ListGroup.Item>
+                                    <Row>
+                                        <Col>Description:</Col>
+                                        <Col>
+                                            <strong>
+                                                {product.description}
+                                            </strong>
+                                        </Col>
+                                    </Row>
+                                </ListGroup.Item>
 
                                 <ListGroup.Item>
                                     <Button

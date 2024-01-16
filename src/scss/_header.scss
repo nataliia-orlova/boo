@@ -1,5 +1,5 @@
 .bi {
-    color: #f7f4f4;
+    color: #c0bebe;
     scale: 1.7;
 }
 
@@ -10,6 +10,79 @@
     margin-left: 8px;
 }
 
-.hover {
-    cursor: pointer;
+.nav__user-area {
+    display: flex;
+    gap: 14px;
+
+    &-btn {
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+        border: none;
+        padding-left: 0;
+    }
+}
+
+.nav-link {
+    color: #c0bebe;
+    padding-left: 0;
+    padding-right: 14px;
+    margin-bottom: 0;
+    font-size: 16px;
+
+    &:hover {
+        color: #ffc107;
+    }
+}
+.navbar-nav .nav-item .nav-link {
+    color: #c0bebe;
+    font-size: 16px;
+    &:hover {
+        color: #ffc107;
+    }
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar__search {
+    display: flex;
+}
+
+// main group of classes
+.navbar {
+    .hover {
+        cursor: pointer;
+    }
+
+    &-brand {
+        margin: 0;
+        font-size: 22px;
+        @media (max-width: 991px) {
+            font-size: 18px;
+        }
+    }
+
+    &__search {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        @media (max-width: 991px) {
+            margin-left: 0;
+        }
+    }
+
+    &__icon-btn {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        margin-left: 6px;
+    }
+
+    &__icon-btn svg {
+        &:hover {
+            fill: #ffc107;
+        }
+    }
 }

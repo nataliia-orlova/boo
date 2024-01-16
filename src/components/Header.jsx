@@ -50,28 +50,61 @@ export default function Header() {
                             >
                                 <p className='nav-link'>Contact</p>
                             </li>
-                            <li
-                                className='nav-item ps-4'
-                                onClick={() => navigate('/cart')}
-                            >
+                        </ul>
+                        <div className='navbar__search'>
+                            <input
+                                type='text'
+                                class='input'
+                                placeholder='Search for ...'
+                            />
+
+                            <button className='navbar__icon-btn'>
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
                                     width='16'
                                     height='16'
                                     fill='currentColor'
-                                    className='bi bi-bag-heart'
+                                    class='bi bi-search'
                                     viewBox='0 0 16 16'
                                 >
-                                    <path
-                                        fillRule='evenodd'
-                                        d='M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132'
-                                    />
+                                    <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0' />
+                                </svg>
+                            </button>
+                        </div>
+                        <div className='nav__user-area'>
+                            <button
+                                className='nav__user-area-btn navbar__icon-btn'
+                                onClick={() => navigate('/cart')}
+                            >
+                                <p className='nav-link'>Cart</p>
+                                <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    width='16'
+                                    height='16'
+                                    fill='currentColor'
+                                    class='bi bi-bag'
+                                    viewBox='0 0 16 16'
+                                >
+                                    <path d='M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z' />
                                 </svg>
                                 <div className='cart__counter'>
                                     {cartItemsQuantity}
                                 </div>
-                            </li>
-                        </ul>
+                            </button>
+                            <button className='nav__user-area-btn navbar__icon-btn'>
+                                <p className='nav-link'>Log in</p>
+                                <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    width='16'
+                                    height='16'
+                                    fill='currentColor'
+                                    class='bi bi-person'
+                                    viewBox='0 0 16 16'
+                                >
+                                    <path d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z' />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </nav>

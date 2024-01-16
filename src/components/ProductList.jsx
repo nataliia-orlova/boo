@@ -9,9 +9,6 @@ function ProductList({ products }) {
         dispatch(addToCart(product));
     };
 
-    // const addToCartHandler = () => {
-    //     dispatch(addToCart({ ...product }));
-    // };
     return (
         <div className='product-list__gallery row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
             {products.map((product) => (
