@@ -8,6 +8,9 @@
     width: 12px;
     color: white;
     margin-left: 8px;
+    // &:hover {
+    //     color: #ffc107;
+    // }
 }
 
 .nav__user-area {
@@ -30,10 +33,6 @@
     padding-right: 14px;
     margin-bottom: 0;
     font-size: 16px;
-
-    &:hover {
-        color: #ffc107;
-    }
 }
 .navbar-nav .nav-item .nav-link {
     color: #c0bebe;
@@ -80,9 +79,15 @@
         margin-left: 6px;
     }
 
-    &__icon-btn svg {
-        &:hover {
-            fill: #ffc107;
-        }
+    // &__icon-btn svg {
+    //     // &:hover {
+    //     //     fill: #ffc107;
+    //     // }
+    // }
+}
+
+.hover {
+    &:hover {
+        color: #ffc107;
     }
 }

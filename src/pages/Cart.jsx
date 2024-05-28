@@ -2,17 +2,24 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ClickCounter from '../components/ClickCounter';
 import { useSelector } from 'react-redux';
-import { removeFromCart } from '../slices/cartSlice';
+import { removeFromCart, selectTotalPrice } from '../slices/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+// import { useState } from 'react';
 
 function Cart() {
-    const cart = useSelector((state) => state.cart.items);
+    const cart = useSelector((state) => state.cart.cartItems);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const handleRemoveFromCart = (product) => {
         dispatch(removeFromCart(product));
     };
+    const totalPrice = useSelector(selectTotalPrice);
+
+    // const totalAmount = cart.reduce(
+    //     (total, product) => total + product.price * product.quantity,
+    //     0
+    // );
 
     return (
         <>
@@ -70,6 +77,17 @@ function Cart() {
                             </li>
                         ))}
                     </ul>
+                    <div className='cart__summary'>
+                        <div className='cart__summary--info'>
+                            <span>Total quantity:</span>
+                            <span>NUM</span>
+                        </div>
+                        <div className='cart__summary--info'>
+                            <span>Total price:</span>
+                            <span>{totalPrice}</span>
+                        </div>
+                        <button className='btn btn-danger'>Order</button>
+                    </div>
                 </div>
             </main>
             <Footer />

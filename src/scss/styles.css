@@ -38,9 +38,6 @@ body {
   margin-bottom: 0;
   font-size: 16px;
 }
-.nav-link:hover {
-  color: #ffc107;
-}
 
 .navbar-nav .nav-item .nav-link {
   color: #c0bebe;
@@ -86,8 +83,9 @@ body {
   outline: none;
   margin-left: 6px;
 }
-.navbar__icon-btn svg:hover {
-  fill: #ffc107;
+
+.hover:hover {
+  color: #ffc107;
 }
 
 .form {
@@ -156,7 +154,7 @@ body {
 
 .applied-filter {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 18px;
   flex-wrap: wrap;
   margin-bottom: 16px;
@@ -231,11 +229,25 @@ body {
 .cart__item-img {
   max-width: 300px;
 }
+.cart__summary {
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+}
 
 .order-info {
   padding-left: 18px;
   padding-top: 42px;
   color: red;
+}
+
+.btn {
+  border: none;
+}
+.btn:active, .btn:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .img-hero {

@@ -71,6 +71,13 @@
     &__item-img {
         max-width: 300px;
     }
+
+    &__summary {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 28px;
+    }
 }
 .order-info {
     padding-left: 18px;
